@@ -1,12 +1,13 @@
 export class App {
-  configureRouter(config, router) {
-    config.title = 'Aurelia';
-    config.map([
-      { route: ['', 'welcome'], name: 'welcome',      moduleId: 'welcome',      nav: true, title: 'Welcome' },
-      { route: 'users',         name: 'users',        moduleId: 'users',        nav: true, title: 'Github Users' },
-      { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title: 'Child Router' }
-    ]);
 
-    this.router = router;
-  }
+    configureRouter(config, router) {
+        this.router = router;
+
+        config.map([
+            { name: 'orders', route: ['', 'orders'], moduleId: 'views/order/orders', nav: true, title: "Orders" }
+            , { name: 'order', route: 'order/:name', moduleId: 'views/order/order' }
+        ]);
+
+    }
+
 }
