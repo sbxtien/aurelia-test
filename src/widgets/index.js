@@ -4,6 +4,7 @@ export function configure(aurelia) {
         "./nav-bar"
         , "./order/widget-address"
         , "./order/widget-header"
+        , "./order/widget-line-items"
         , "./order/widget-raw-data"
     ]);
 
