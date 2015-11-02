@@ -1,0 +1,30 @@
+<template>
+    <link type="text/css" rel="stylesheet" href="styles/rawdata.css">
+
+    <div class="tabs">
+        <nav click.delegate="activateTab($event)">
+            <ul>
+                <li class="active">
+                    <a data-tab="#orderJson">Order.json</a>
+                </li>
+                <li>
+                    <a data-tab="#transactionsJson">Transaction.json</a>
+                </li>
+                <li>
+                    <a data-tab="#fulfillmentJson">Fulfillment.json</a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <article id="orderJson">
+                <pre>${orderJson}</pre>
+            </article>
+            <article id="transactionsJson" style="display:none;">
+                <pre>${transactionsJson}</pre>
+            </article>
+            <article id="fulfillmentJson" style="display:none;">
+                <pre>${fulfillmentJson}</pre>
+            </article>
+        </section>
+    </div>
+</template>

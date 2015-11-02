@@ -1,3 +1,11 @@
 <template>
-    test
+    <section class="details">
+        <widget-header order.bind="order"></widget-header>
+        <widget-address model.bind="{ title: 'Billing', address: order.billing_address }"></widget-address>
+        <widget-address model.bind="{ title: 'Shipping', address: order.shipping_address }"></widget-address>
+    </section>
+    <section class="line-items"></section>
+    <section class="raw-data">
+        <widget-raw-data order.bind="order"></widget-raw-data>
+    </section>
 </template>

@@ -1,0 +1,25 @@
+<template>
+    <dl>
+        <dt>${model.title}</dt>
+        <dd>
+            <dt>Name</dt>
+            <dd>${model.address.name}</dd>
+
+            <dt>Company</dt>
+            <dd>${model.address.company}</dd>
+
+            <dt>Phone</dt>
+            <dd>${model.address.phone}</dd>
+
+            <dt>Address</dt>
+            <dd>
+                <address>
+                    <div>${model.address.address1}</div>
+                    <div>${model.address.address2}</div>
+                    <div>${model.address.city}, ${model.address.province}, ${model.address.country}</div>
+                    <div>${model.address.zip}</div>
+                </address>
+            </dd>
+        </dd>
+    </dl>
+</template>

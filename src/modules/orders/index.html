@@ -1,7 +1,7 @@
 <template>
     <ul class="-orders" click.delegate="loadOrder($event)">
         <li class="-orders-order-card" repeat.for="order of orders">
-            <article data-order-id="${order.id}">
+            <article data-order-name="${order.name}">
                 <aside>
                     <div>${order.name}</div>
                     <div>$${order.total_price}</div>

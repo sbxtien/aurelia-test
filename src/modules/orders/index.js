@@ -1,28 +1,30 @@
 import {inject} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 import {OrderDao} from '../../data/orderDao';
 
-@inject(OrderDao)
+@inject(Router, OrderDao)
 export class Orders {
 
-    constructor (OrderDao) {
+    constructor (Router, OrderDao) {
+        this.router = Router;
         this.orderDao = OrderDao;
     }
 
     activate () {
         return this.orderDao.get()
-            .then(response => this.orders = response.content);
+            .then(orders => this.orders = orders);
     }
 
     loadOrder ($event) {
-        var id = $event.path
+        var name = $event.path
             .find(function (li){
                 return li.nodeName.toLowerCase() === 'li'
                     && li.getAttribute('class').indexOf('-orders-order-card') > -1;
             })
             .querySelector('article')
-            .getAttribute('data-order-id');
+            .getAttribute('data-order-name');
 
-        var url = this.router.generate('order', { id: id });
+        var url = this.router.generate('order', { name: name });
         this.router.navigate(url);
     }
 

@@ -9,7 +9,7 @@ export class App {
 
         config.map([
             { name: 'orders', route: ['', 'orders'], moduleId: 'modules/orders/index', nav: true, title: "Orders" }
-            , { name: 'order', route: 'order/:id', moduleId: 'modules/order/index' }
+            , { name: 'order', route: 'order/:name', moduleId: 'modules/order/index' }
         ]);
 
     }
