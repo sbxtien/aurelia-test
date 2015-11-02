@@ -46,5 +46,4 @@ export class WidgetRawData {
         document.querySelector(li.querySelector('a').getAttribute('data-tab'))
             .style.display = 'block';
     }
-
 }

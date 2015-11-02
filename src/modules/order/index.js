@@ -13,7 +13,4 @@ export class Order {
             .then(order => this.order = order);
     }
 
-    get orderJson () {
-        return JSON.stringify(this.order, null, 4);
-    }
 }
