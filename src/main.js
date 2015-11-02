@@ -10,7 +10,7 @@ export function configure(aurelia) {
         .standardConfiguration()
         //.developmentLogging()
         //.plugin('aurelia-animator-css');
-        .feature('./dist/widgets');
+        .feature('/dist/widgets');
 
     aurelia.start()
         .then(_aurelia => _aurelia.setRoot());

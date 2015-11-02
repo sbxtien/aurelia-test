@@ -1,0 +1,17 @@
+<template>
+    <nav>
+        <dl>
+            <dt class="collapsed">
+                <a href="#">Dashboard</a>
+            </dt>
+            <dd></dd>
+
+            <template repeat.for="row of router.navigation">
+                <dt class="${row.isActive ? '' : 'collapsed'}">
+                    <a href.bind="row.href">${row.title}</a>
+                </dt>
+                <dd></dd>
+            </template>
+        </dl>
+    </nav>
+</template>

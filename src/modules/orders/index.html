@@ -1,0 +1,41 @@
+<template>
+    <ul class="-orders" click.delegate="loadOrder($event)">
+        <li class="-orders-order-card" repeat.for="order of orders">
+            <article data-order-id="${order.id}">
+                <aside>
+                    <div>${order.name}</div>
+                    <div>$${order.total_price}</div>
+                </aside>
+                <div class="details">
+                    <div>
+                        <strong>name</strong>
+                        <span>${order.shipping_address.name}</span>
+                    </div>
+                    <div>
+                        <strong>email</strong>
+                        <span>${order.email}</span>
+                    </div>
+                    <div>
+                        <div>
+                            <strong>shipping address</strong>
+                        </div>
+                        <div>${$parent.getShippingLineAddress1(order)}</div>
+                        <div>${$parent.getShippingLineAddress2(order)}</div>
+                    </div>
+                    <div>
+                        <strong>created</strong>
+                        <span>${order.created_at}</span>
+                    </div>
+                    <div>
+                        <strong>updated</strong>
+                        <span>${order.updated_at}</span>
+                    </div>
+                    <div>
+                        <strong>processed</strong>
+                        <span>${order.processed_at}</span>
+                    </div>
+                </div>
+            </article>
+        </li>
+    </ul>
+</template>
